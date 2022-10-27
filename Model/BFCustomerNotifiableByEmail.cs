@@ -21,7 +21,7 @@ namespace BlackFridayCustomer100.Model
     private string name { get; }
     #endregion
 
-    #region Ctors
+    #region Ctor
     public BFCustomerNotifiableByEmail(BFCustomerInfo customerInfo)
     {
       this.isAlreadyNotified = customerInfo.IsEmailSent;
