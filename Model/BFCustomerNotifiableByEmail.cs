@@ -36,6 +36,6 @@ namespace BlackFridayCustomer100.Model
     public bool Notify()
       =>
       this.notifier
-      .Notify(this);
+      .SendNotification(this);
   }
 }
