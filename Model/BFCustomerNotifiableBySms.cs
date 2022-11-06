@@ -5,7 +5,6 @@ namespace BlackFridayCustomer100.Model
   public class BFCustomerNotifiableBySms : INotifiableCustomer
   {
     #region Properties
-    public bool IsAlreadyNotified => this.isAlreadyNotified;
     public eNotifyType NotifyType => this.notifyType;
     public string NotifyTarget => this.notifyTarget;
     public string OrderID => this.orderID;
@@ -13,7 +12,6 @@ namespace BlackFridayCustomer100.Model
     #endregion
 
     #region Data Members
-    private bool isAlreadyNotified { get; }
     private eNotifyType notifyType { get; }
     private string notifyTarget { get; }
     private INotifier notifier { get; }
@@ -24,7 +22,6 @@ namespace BlackFridayCustomer100.Model
     #region Ctor
     public BFCustomerNotifiableBySms(BFCustomerInfo customerInfo)
     {
-      this.isAlreadyNotified = customerInfo.IsSmsSent;
       this.notifyType = eNotifyType.Sms;
       this.notifyTarget = customerInfo.PhoneNumber;
       this.notifier = new SmsNotifier();
